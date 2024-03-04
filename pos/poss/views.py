@@ -17,6 +17,7 @@ def add_product(request):
         code = request.POST['code']
         photo = request.FILES.get('image')
         cost = request.POST['cost']
+        sellingPrice = request.Post['sellingPrice']
         quantity = request.POST['quantity']
         
         if Product.objects.filter(name=name).exists():
@@ -26,7 +27,7 @@ def add_product(request):
             print("enter a unique code")
             return redirect('add_product')
         else:
-            product = Product.objects.create(name=name, code=code, photo=photo, cost=cost, quantity=quantity)
+            product = Product.objects.create(name=name, code=code, photo=photo, cost=cost, quantity=quantity, sellingPrice=sellingPrice)
             product.save()
             return redirect('add_product')
         

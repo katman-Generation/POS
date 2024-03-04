@@ -8,16 +8,24 @@
 <body>
     <form action="" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        <h2>name of the product</h2>
+        <label for="name">name of the product</label>
         <input name="name" type="text" >
-        <h2>a unique code for your product</h2>
+
+        <label for="code">a unique code for your product</label>
         <input name="code" type="text">
-        <h2>upload an image</h2>
+
+        <label for="image">product image</label>
         <input name="image" type="file">
-        <h2>cost price per unit</h2>
-        <input name="cost" type="money">
-        <h2>enter number of units</h2>
+
+        <label for="cost">cost price per unit</label>
+        <input name="cost" type="currency">
+
+        <label for="sellingPrice">selling price per unit</label>
+        <input name="sellingPrice" type="currency">
+
+        <label for="quantity">enter the Quantity</label>
         <input name="quantity" type="number">
+
         <button type="submit">save</button>
     </form>
 </body>
